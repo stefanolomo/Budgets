@@ -1,0 +1,101 @@
+*{
+	font-family: Arial, Helvetica, sans-serif;
+}
+body{
+	background-color: rgb(182, 182, 182);
+}
+header{
+	padding: 1rem 0 0 0;
+	background-color: rgb(182, 182, 182);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+header div{
+	display: flex;
+}
+header h4{
+	color: black;
+	margin: 1rem 0.5rem 1rem 0;
+}
+main{
+	background-color: rgb(182, 182, 182);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+main h3{
+	margin: 1rem 0 1rem 0;
+}
+main .list{
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(221, 221, 221);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	margin: 1rem;
+}
+main .list div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0.3rem 0 0.3rem 0;
+}
+main .list div .item{
+	margin: 0 0.3rem 0 0.3rem;
+	font-size: 1rem;
+}
+main .list div button{
+	padding: 5px;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	box-shadow: 0px 0px 45px 0px rgba(17, 17, 26, 0.18);
+}
+main .list div p{
+	max-width: 250px;
+}
+main .list div section{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+main .form{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: rgb(221, 221, 221);
+	border-radius: 1rem;
+	padding: 1.5rem 2rem 1rem 2rem;
+}
+main .form div{
+	margin: 0.3rem 0 0.3rem 0;
+}
+main .form div select, input{
+	outline: none;
+	border-radius: 3px;
+	border: none;
+	padding: 5px;
+	min-width: 205px;
+}
+.orange{
+	background-color: orange;
+}
+.red{
+	background-color: rgb(255, 0, 0);
+}
+.green{
+	background-color: rgb(6, 179, 6);
+}
+.gasto{
+	color: red;
+}
+.ingreso{
+	color: rgb(6, 179, 6);
+}
+.crear{
+	background-color: purple;
+	color: white;
+	padding: 5px 20px 5px 20px;
+}
