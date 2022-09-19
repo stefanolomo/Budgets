@@ -40,10 +40,23 @@ main .list div{
 	align-items: center;
 	justify-content: space-between;
 	margin: 0.3rem 0 0.3rem 0;
+	border: solid 1px;
+    padding: 0.5rem;
+    border-radius: 50px;
 }
 main .list div .item{
-	margin: 0 0.3rem 0 0.3rem;
+	margin: 0 0.7rem 0 0.3rem;
 	font-size: 1rem;
+}
+main .list div .dat{
+	font-weight: bolder;
+}
+main .list div .name{
+	background-color: yellow;
+	padding: 2px;
+}
+main .list div .quant{
+	font-weight: bolder;
 }
 main .list div button{
 	padding: 5px;
