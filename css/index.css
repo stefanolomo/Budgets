@@ -1,114 +1,92 @@
-*{
-	font-family: Arial, Helvetica, sans-serif;
+@import url(normalize.min.css);
+@import url(variables.css);
+@import url(fonts.css);
+input {
+  border: none;
+  outline: none;
 }
-body{
-	background-color: rgb(182, 182, 182);
+code {
+  font-family: "Cascadia Code", monospace;
 }
-header{
-	padding: 1rem 0 0 0;
-	background-color: rgb(182, 182, 182);
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
+button {
+  cursor: pointer;
 }
-header div{
-	display: flex;
+header {
+  padding: var(--xxxl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: var(--xxxl);
+  background-color: var(--header-bg);
+  box-shadow: 0 3.5px 10px 4px var(--shadow-color);
 }
-header h4{
-	color: black;
-	margin: 1rem 0.5rem 1rem 0;
+header p,
+header code {
+  color: white;
 }
-main{
-	background-color: rgb(182, 182, 182);
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+main section.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--xxxl);
 }
-main h3{
-	margin: 1rem 0 1rem 0;
+main section.container div.card {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--xxl);
+  border: solid 1px black;
+  border-radius: var(--xl);
+  min-width: 320px;
+  padding: var(--xl) var(--xxxl) var(--xl) var(--xxxl);
+  margin: var(--xxl);
+  box-shadow: 1.5px 1.5px 10px 1.5px var(--shadow-color);
 }
-main .list{
-	display: flex;
-	flex-direction: column;
-	background-color: rgb(221, 221, 221);
-	border-radius: 1rem;
-	padding: 1.5rem;
-	margin: 1rem;
+main section.container div.card .details {
+  display: flex;
+  gap: var(--xxl);
+  align-items: center;
 }
-main .list div{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: 0.3rem 0 0.3rem 0;
-	border: solid 1px;
-    padding: 0.5rem;
-    border-radius: 50px;
+main section.container div.card .details b.title {
+  max-width: calc(100% - 10rem);
 }
-main .list div .item{
-	margin: 0 0.7rem 0 0.3rem;
-	font-size: 1rem;
+main section.container div.card .buttons button {
+  display: flex;
 }
-main .list div .dat{
-	font-weight: bolder;
+@media (max-width: 655px) {
+  main section.container div.card {
+    margin: 0;
+  }
 }
-main .list div .name{
-	background-color: yellow;
-	padding: 2px;
+main section.menu {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--xxxxl);
+  margin-top: var(--xxxl);
 }
-main .list div .quant{
-	font-weight: bolder;
+main section.menu input,
+main section.menu button {
+  min-width: 240px;
+  width: fit-content;
+  border: 2px black inset;
+  height: 25px;
+  padding: var(--l);
+  border-radius: var(--l);
+  margin: var(--l);
+  background-color: var(--input-color);
 }
-main .list div button{
-	padding: 5px;
-	outline: none;
-	border: none;
-	border-radius: 3px;
-	color: white;
-	box-shadow: 0px 0px 45px 0px rgba(17, 17, 26, 0.18);
+main section.menu form,
+main section.menu div.budget-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-main .list div p{
-	max-width: 250px;
-}
-main .list div section{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-main .form{
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	background-color: rgb(221, 221, 221);
-	border-radius: 1rem;
-	padding: 1.5rem 2rem 1rem 2rem;
-}
-main .form div{
-	margin: 0.3rem 0 0.3rem 0;
-}
-main .form div select, input{
-	outline: none;
-	border-radius: 3px;
-	border: none;
-	padding: 5px;
-	min-width: 205px;
-}
-.orange{
-	background-color: orange;
-}
-.red{
-	background-color: rgb(255, 0, 0);
-}
-.green{
-	background-color: rgb(6, 179, 6);
-}
-.gasto{
-	color: red;
-}
-.ingreso{
-	color: rgb(6, 179, 6);
-}
-.crear{
-	background-color: purple;
-	color: white;
-	padding: 5px 20px 5px 20px;
+main section.menu form h3,
+main section.menu div.budget-container h3 {
+  font-family: "Cascadia Code", monospace;
+  margin: var(--l);
 }
