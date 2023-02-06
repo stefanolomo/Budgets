@@ -11,6 +11,9 @@ code {
 button {
   cursor: pointer;
 }
+.hidden {
+  display: none;
+}
 header {
   padding: var(--xxxl);
   display: flex;
