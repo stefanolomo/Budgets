@@ -23,7 +23,7 @@
 					<p class="price"><b>Price:</b> <code>$3500</code></p>
 				</div>
 				<div class="buttons">
-					<button onclick="deleteCard(self)">
+					<button onclick="DeleteCard(this.parentElement.parentElement)">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 							 class="bi bi-x-lg" viewBox="0 0 16 16">
 							<path
@@ -35,10 +35,10 @@
 		</section>
 		<section class="menu">
 			<form>
-				<input type="text" placeholder="Title" required>
-				<input type="number" placeholder="Quantity" required>
-				<input type="date" placeholder="Date (optional)">
-				<button type="submit" onclick="createCard()">Create</button>
+				<input id="title" type="text" placeholder="Title" required>
+				<input id="price" type="number" placeholder="Price" required>
+				<input id="quant" type="number" placeholder="Quantity" required>
+				<button aria-label="Create" type="submit" onclick="event.preventDefault()">Create</button>
 			</form>
 			<div class="budget-container">
 				<h3>Change your budget</h3>
