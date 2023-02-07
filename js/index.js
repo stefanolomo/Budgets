@@ -15,6 +15,14 @@ let CardContainer = document.querySelector("main section.container");
 let RemoveCardButton = document.querySelector(
 	"main section.container .card .buttons button"
 );
+let BudgetInput = document.querySelector(
+	"main section.menu .budget-container #budget"
+);
+let BudgetIndicator = document.querySelector("header .budget code");
+let BudgetPercentage = document.querySelector("header .percentage code");
+let AllPrices = document.querySelectorAll(
+	"main section.container .card .price code"
+);
 
 //* CreateCard Function
 let CreateCard = () => {
@@ -39,14 +47,19 @@ let CreateCard = () => {
 		(FormPrice.value !== "") &
 		(FormQuant.value !== "")
 	) {
-		console.log(FormTitle, FormPrice, FormQuant);
 		CardContainer.insertAdjacentHTML("beforeend", template);
+		AllPrices = document.querySelectorAll(
+			"main section.container .card .price code"
+		);
+		let percentage =
+			((GetSpentMoney() - BudgetInput.value) / BudgetInput.value) * 100;
+		BudgetPercentage.innerText = `${percentage}%`;
 	} else {
 		alert("The fields of title, price or quantity cant be empty!");
 	}
 };
+
 let DeleteCard = (element) => {
-	console.log(element);
 	element.remove();
 };
 
@@ -58,5 +71,25 @@ function EscapeHTML(str) {
 		.replace(/"/g, "&quot;")
 		.replace(/'/g, "&#039;");
 }
+
+let GetSpentMoney = () => {
+	let total = 0;
+	AllPrices.forEach((price) => {
+		total += parseInt(price.textContent.replace("$", ""));
+	});
+	return Math.trunc(total);
+};
+
+let ChangeBudget = () => {
+	if (BudgetInput.value == "") {
+		BudgetIndicator.innerText = "0$";
+	} else {
+		BudgetIndicator.innerText = `${BudgetInput.value}$`;
+	}
+	let percentage =
+		((GetSpentMoney() - BudgetInput.value) / BudgetInput.value) * 100;
+	BudgetPercentage.innerText = `${percentage}%`;
+};
+
 //* CreateCard Event listener on submit button
 FormButton.addEventListener("click", CreateCard);
